@@ -1,0 +1,27 @@
+﻿@using Yesquest.Models.vm
+@model ItemVm
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Itemtable.ItemId" class="form-control" />
+<div class="form-group">
+        <input type="text" asp-for="Itemtable.ItemName" class="form-control" />
+</div>
+
+    <div class="form-group">
+        <input type="number" asp-for="Itemtable.QtyStock" class="form-control" />
+    </div>
+    <div class="form-group">
+        <select type="text" asp-for="Itemtable.CategoryId" asp-items="@Model.CategoryList" class="form-control">
+        <option> --select--</option> 
+        </select>
+    </div>
+
+    <input type="submit" class="btn btn-primary"/>
+
+</form>
+

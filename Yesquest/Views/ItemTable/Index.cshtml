@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Itemtable>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Display the item name, category and item stock</h1>
+
+
+
+<table class="table">
+    <tr>
+        <th> Item Name</th>
+
+        <th> Item category </th>
+        <th> Item stock</th>
+        <th> Action</th>
+    </tr>
+     
+        @foreach(var o in Model){
+
+            <tr>
+                <td> @o.ItemName</td>
+                     <td> @o.Category.CategoryName</td>
+
+                     <td> @o.QtyStock</td>
+
+            <td> <a asp-action="Edit" asp-route-id="@o.ItemId"> Edit</a></td>
+            </tr>
+
+        }
+
+    
+</table>
